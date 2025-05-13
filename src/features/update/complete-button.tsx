@@ -1,7 +1,7 @@
 "use client";
 
 import useCompleteMutation from "@/features/update/hooks/use-complete-mutation";
-import { Todo } from "@/types/todo";
+import type { Todo } from "@/types/todo";
 
 type Props = Omit<Todo, "title">;
 

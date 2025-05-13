@@ -3,7 +3,7 @@ import {
   API_METHOD,
   API_ROUTE_HANDLER_PATH,
 } from "@/constants/api";
-import { Todo } from "@/types/todo";
+import type { Todo } from "@/types/todo";
 
 const { READ } = API_ROUTE_HANDLER_PATH;
 const { GET } = API_METHOD;

@@ -1,7 +1,7 @@
 "use client";
 
 import { useDeleteTodo } from "@/features/delete/hooks/use-delete-todo";
-import { Todo } from "@/types/todo";
+import type { Todo } from "@/types/todo";
 
 type Props = Pick<Todo, "id">;
 
