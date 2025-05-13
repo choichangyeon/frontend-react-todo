@@ -11,6 +11,7 @@ const DeleteButton = ({ id }: Props) => {
   const handleDelete = async () => {
     try {
       await deleteTodo();
+      alert("해당 Todo가 삭제되었습니다.");
     } catch (error) {
       alert(`삭제 중 에러! ${error}`);
     }
