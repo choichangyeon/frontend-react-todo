@@ -1,5 +1,7 @@
 import { QUERY_KEY } from "@/constants/query-key";
 import { getTodos } from "@/features/read/api/server-services";
+import TodoInput from "@/features/todo/todo-input";
+import TodoList from "@/features/todo/todo-list";
 import {
   dehydrate,
   HydrationBoundary,
@@ -18,7 +20,9 @@ export const Home = async () => {
 
   return (
     <HydrationBoundary state={dehydrate(queryClient)}>
-      <div>Hello World</div>
+      <h1>Todo List Maker</h1>
+      <TodoInput />
+      <TodoList />
     </HydrationBoundary>
   );
 };
