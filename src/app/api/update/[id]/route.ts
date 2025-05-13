@@ -11,13 +11,13 @@ export const PATCH = async (
     const { id } = params;
     const { title, completed } = await request.json();
     let res;
-    if (title) {
+    if (typeof title === "string") {
       res = await fetch(`${API_URL}/${id}`, {
         method: METHOD_PATCH,
         body: JSON.stringify({ title }),
       });
     }
-    if (completed) {
+    if (typeof completed === "boolean") {
       res = await fetch(`${API_URL}/${id}`, {
         method: METHOD_PATCH,
         body: JSON.stringify({ completed }),
