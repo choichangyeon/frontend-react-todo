@@ -4,7 +4,9 @@ import { NextResponse } from "next/server";
 
 export const GET = async () => {
   try {
-    const res = await fetch(API_URL);
+    const res = await fetch(API_URL, {
+      cache: "no-store",
+    });
     const data = await res.json();
 
     return NextResponse.json({ data }, { status: 200 });
