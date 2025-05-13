@@ -1,5 +1,3 @@
-"use server";
-
 import {
   API_HEADER,
   API_METHOD,
@@ -16,7 +14,7 @@ export const getTodos = async (): Promise<Todo[]> => {
     method: GET,
     headers: JSON_HEADER,
   });
-  const data: Todo[] = await res.json();
+  const { data } = await res.json();
 
-  return data;
+  return data as Todo[];
 };
