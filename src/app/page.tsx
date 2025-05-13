@@ -1,6 +1,10 @@
 import { QUERY_KEY } from "@/constants/query-key";
 import { getTodos } from "@/features/read/api/server-services";
-import { QueryClient } from "@tanstack/react-query";
+import {
+  dehydrate,
+  HydrationBoundary,
+  QueryClient,
+} from "@tanstack/react-query";
 
 const { TODOS } = QUERY_KEY;
 
@@ -12,7 +16,11 @@ export const Home = async () => {
     queryFn: getTodos,
   });
 
-  return <div>Hello World</div>;
+  return (
+    <HydrationBoundary state={dehydrate(queryClient)}>
+      <div>Hello World</div>
+    </HydrationBoundary>
+  );
 };
 
 export default Home;
