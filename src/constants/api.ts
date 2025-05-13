@@ -10,6 +10,7 @@ export const API_METHOD = {
 
 export const API_ROUTE_HANDLER_PATH = {
   READ: "/api/read",
+  DELETE: (id: string) => `/api/delete/${id}`,
 };
 
 export const API_HEADER = {
