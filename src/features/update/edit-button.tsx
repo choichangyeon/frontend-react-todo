@@ -1,6 +1,6 @@
 "use client";
 
-import useEditMutation from "@/features/update/hooks/use-edit-mutation";
+import { useEditMutation } from "@/features/update/hooks/use-edit-mutation";
 import type { Todo } from "@/types/todo";
 
 type Props = Omit<Todo, "completed"> & {

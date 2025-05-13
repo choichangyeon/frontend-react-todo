@@ -1,12 +1,12 @@
 "use client";
 
-import { useDeleteTodo } from "@/features/delete/hooks/use-delete-todo";
+import { useDeleteMutation } from "@/features/delete/hooks/use-delete-mutation";
 import type { Todo } from "@/types/todo";
 
 type Props = Pick<Todo, "id">;
 
 const DeleteButton = ({ id }: Props) => {
-  const { mutateAsync: deleteTodo } = useDeleteTodo({ id });
+  const { mutateAsync: deleteTodo } = useDeleteMutation({ id });
 
   const handleDelete = async () => {
     try {

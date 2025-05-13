@@ -6,7 +6,7 @@ import { QUERY_KEY } from "@/constants/query-key";
 const { TODOS } = QUERY_KEY;
 type Props = Pick<Todo, "id">;
 
-const useEditMutation = ({ id }: Props) => {
+export const useEditMutation = ({ id }: Props) => {
   const queryClient = useQueryClient();
 
   return useMutation({
@@ -35,5 +35,3 @@ const useEditMutation = ({ id }: Props) => {
     },
   });
 };
-
-export default useEditMutation;

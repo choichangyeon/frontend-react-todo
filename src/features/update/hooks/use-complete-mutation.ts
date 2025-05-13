@@ -6,7 +6,7 @@ import { QUERY_KEY } from "@/constants/query-key";
 const { TODOS } = QUERY_KEY;
 type Props = Pick<Todo, "id">;
 
-const useCompleteMutation = ({ id }: Props) => {
+export const useCompleteMutation = ({ id }: Props) => {
   const queryClient = useQueryClient();
 
   return useMutation({
@@ -36,5 +36,3 @@ const useCompleteMutation = ({ id }: Props) => {
     },
   });
 };
-
-export default useCompleteMutation;
