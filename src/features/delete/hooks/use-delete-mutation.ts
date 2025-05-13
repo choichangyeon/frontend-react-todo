@@ -8,7 +8,7 @@ const { TODOS } = QUERY_KEY;
 
 type Props = Pick<Todo, "id">;
 
-export const useDeleteTodo = ({ id }: Props) => {
+export const useDeleteMutation = ({ id }: Props) => {
   const queryClient = useQueryClient();
   return useMutation({
     mutationFn: () => deleteTodo(id),
