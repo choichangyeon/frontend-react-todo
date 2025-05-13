@@ -10,10 +10,23 @@ type Props = Pick<Todo, "id">;
 
 export const useDeleteTodo = ({ id }: Props) => {
   const queryClient = useQueryClient();
-
   return useMutation({
     mutationFn: () => deleteTodo(id),
-    onError: (error) => {
+    onMutate: async () => {
+      await queryClient.cancelQueries({ queryKey: [TODOS] });
+      const previousTodos = queryClient.getQueryData<Todo[]>([TODOS]) ?? [];
+
+      queryClient.setQueryData(
+        [TODOS],
+        previousTodos.filter((todo) => todo.id !== id)
+      );
+
+      return { previousTodos };
+    },
+    onError: (error, _variables, context) => {
+      if (context?.previousTodos) {
+        queryClient.setQueryData([TODOS], context.previousTodos);
+      }
       throw new Error(error.message);
     },
     onSettled: () => {
