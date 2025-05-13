@@ -11,6 +11,9 @@ const CreateButton = ({ title, onSetTitle }: Props) => {
   const { mutateAsync: createTodo } = useCreateMutation();
 
   const handleCreate = async () => {
+    if (!title) {
+      return;
+    }
     try {
       await createTodo(title);
       onSetTitle("");
