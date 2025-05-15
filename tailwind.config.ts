@@ -7,6 +7,10 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      screens: {
+        mobile: { min: "320px", max: "420px" },
+        desktop: { min: "1024px" },
+      },
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
