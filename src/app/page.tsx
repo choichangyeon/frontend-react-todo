@@ -19,11 +19,13 @@ const Home = async () => {
   });
 
   return (
-    <HydrationBoundary state={dehydrate(queryClient)}>
-      <h1>Todo List Maker</h1>
-      <TodoInput />
-      <TodoList />
-    </HydrationBoundary>
+    <main className="flex flex-col items-center h-screen">
+      <HydrationBoundary state={dehydrate(queryClient)}>
+        <h1 className="text-4xl font-bold m-4">Todo List Maker</h1>
+        <TodoInput />
+        <TodoList />
+      </HydrationBoundary>
+    </main>
   );
 };
 
