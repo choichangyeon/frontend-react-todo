@@ -10,7 +10,7 @@ import {
 
 const { TODOS } = QUERY_KEY;
 
-export const Home = async () => {
+const Home = async () => {
   const queryClient = new QueryClient();
 
   queryClient.prefetchQuery({
