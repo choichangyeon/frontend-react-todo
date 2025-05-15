@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   description: "React Todo App 바로인턴 12기 과제",
 };
 
-export const RootLayout = ({
+const RootLayout = ({
   children,
 }: Readonly<{
   children: React.ReactNode;
