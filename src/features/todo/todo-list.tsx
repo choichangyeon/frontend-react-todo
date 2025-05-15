@@ -13,7 +13,7 @@ const TodoList = () => {
   if (isError) return <div>todos 요청 오류</div>;
 
   return (
-    <section className="flex flex-col items-center w-1/2">
+    <section className="flex flex-col items-center w-3/4 desktop:max-w-[1024px]">
       {todos.length === 0 && <span>Todo가 없습니다. 추가해주세요.</span>}
       {todos.length > 0 && (
         <div className="flex flex-col w-full p-4 items-end">

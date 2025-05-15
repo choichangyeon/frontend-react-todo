@@ -19,7 +19,7 @@ const TodoComponent = ({ completed, title, id }: Props) => {
           type="text"
           value={editTitle}
           onChange={(e) => setEditTitle(e.target.value)}
-          className="w-full border border-gray-300 rounded-md p-2 mr-2"
+          className="w-full desktop:max-w-[600px] border border-gray-300 rounded-md p-2 mr-2"
         />
       ) : completed ? (
         <s className="text-gray-500 text-lg text-ellipsis overflow-hidden">
