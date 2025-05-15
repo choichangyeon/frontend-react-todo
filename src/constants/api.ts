@@ -1,5 +1,4 @@
 export const API_URL = process.env.API_URL + "/todos";
-// export const API_URL = process.env.TEST_URL;
 
 export const API_METHOD = {
   GET: "GET",
