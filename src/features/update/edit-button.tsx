@@ -44,7 +44,7 @@ const EditButton = ({
   return (
     <button
       onClick={handleEdit}
-      className="w-12 flex-none bg-blue-400 hover:bg-blue-500 text-white px-1 py-1 rounded-md transition-colors duration-200 text-sm"
+      className="mobile:w-8 w-12 flex-none bg-blue-400 hover:bg-blue-500 text-white mobile:p-0 p-1 rounded-md transition-colors duration-200 mobile:text-[10px] text-sm"
     >
       수정
     </button>

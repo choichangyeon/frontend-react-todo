@@ -19,18 +19,18 @@ const TodoComponent = ({ completed, title, id }: Props) => {
           type="text"
           value={editTitle}
           onChange={(e) => setEditTitle(e.target.value)}
-          className="w-full desktop:max-w-[600px] border border-gray-300 rounded-md p-2 mr-2"
+          className="w-full mobile:text-xs mobile:p-1 desktop:max-w-[600px] border border-gray-300 rounded-md p-2 mr-2"
         />
       ) : completed ? (
-        <s className="text-gray-500 text-lg text-ellipsis overflow-hidden">
+        <s className="text-gray-500 mobile:text-sm text-lg text-ellipsis overflow-hidden">
           {title}
         </s>
       ) : (
-        <span className="font-bold text-lg text-ellipsis overflow-hidden">
+        <span className="font-bold mobile:text-sm text-lg text-ellipsis overflow-hidden">
           {title}
         </span>
       )}
-      <div className="flex flex-row gap-2">
+      <div className="flex flex-row gap-2 mobile:gap-1">
         <CompleteButton id={id} completed={completed} />
         <DeleteButton id={id} />
         <EditButton

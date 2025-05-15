@@ -11,7 +11,7 @@ const TodoInput = () => {
         type="text"
         value={title}
         onChange={(e) => setTitle(e.target.value)}
-        className="border border-gray-300 rounded-md p-2 w-52"
+        className="border border-gray-300 rounded-md p-2 w-52 mobile:w-40 mobile:text-sm"
         placeholder="Todo를 입력해주세요."
       />
       <CreateButton title={title} onSetTitle={setTitle} />

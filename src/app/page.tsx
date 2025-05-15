@@ -21,7 +21,9 @@ const Home = async () => {
   return (
     <main className="flex flex-col items-center h-screen">
       <HydrationBoundary state={dehydrate(queryClient)}>
-        <h1 className="text-4xl font-bold m-4">Todo List Maker</h1>
+        <h1 className="mobile:text-2xl mobile:m-2 text-4xl font-bold m-4">
+          Todo List Maker
+        </h1>
         <TodoInput />
         <TodoList />
       </HydrationBoundary>
