@@ -13,27 +13,34 @@ const TodoComponent = ({ completed, title, id }: Props) => {
   const [editTitle, setEditTitle] = useState(title);
 
   return (
-    <li className="flex flex-row items-center">
+    <li className="flex flex-row items-center justify-between w-full">
       {isEditing ? (
         <input
           type="text"
           value={editTitle}
           onChange={(e) => setEditTitle(e.target.value)}
+          className="w-full mobile:text-xs mobile:p-1 desktop:max-w-[600px] border border-gray-300 rounded-md p-2 mr-2"
         />
       ) : completed ? (
-        <s>{title}</s>
+        <s className="text-gray-500 mobile:text-sm text-lg text-ellipsis overflow-hidden">
+          {title}
+        </s>
       ) : (
-        <span>{title}</span>
+        <span className="font-bold mobile:text-sm text-lg text-ellipsis overflow-hidden">
+          {title}
+        </span>
       )}
-      <CompleteButton id={id} completed={completed} />
-      <DeleteButton id={id} />
-      <EditButton
-        id={id}
-        isEditing={isEditing}
-        onSetEditing={setIsEditing}
-        editTitle={editTitle}
-        title={title}
-      />
+      <div className="flex flex-row gap-2 mobile:gap-1">
+        <CompleteButton id={id} completed={completed} />
+        <DeleteButton id={id} />
+        <EditButton
+          id={id}
+          isEditing={isEditing}
+          onSetEditing={setIsEditing}
+          editTitle={editTitle}
+          title={title}
+        />
+      </div>
     </li>
   );
 };

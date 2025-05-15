@@ -23,7 +23,14 @@ const CreateButton = ({ title, onSetTitle }: Props) => {
     }
   };
 
-  return <button onClick={handleCreate}>추가</button>;
+  return (
+    <button
+      onClick={handleCreate}
+      className="bg-blue-500 text-white p-2 rounded-md mobile:text-xs"
+    >
+      추가
+    </button>
+  );
 };
 
 export default CreateButton;

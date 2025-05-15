@@ -1,7 +1,8 @@
-import { API_METHOD, API_URL } from "@/constants/api";
+import { API_HEADER, API_METHOD, API_URL } from "@/constants/api";
 import { NextResponse } from "next/server";
 
 const { PATCH: METHOD_PATCH } = API_METHOD;
+const { JSON_HEADER } = API_HEADER;
 
 export const PATCH = async (
   request: Request,
@@ -15,12 +16,14 @@ export const PATCH = async (
       res = await fetch(`${API_URL}/${id}`, {
         method: METHOD_PATCH,
         body: JSON.stringify({ title }),
+        headers: JSON_HEADER,
       });
     }
     if (typeof completed === "boolean") {
       res = await fetch(`${API_URL}/${id}`, {
         method: METHOD_PATCH,
         body: JSON.stringify({ completed }),
+        headers: JSON_HEADER,
       });
     }
     if (!res) {
