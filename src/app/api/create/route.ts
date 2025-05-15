@@ -7,8 +7,6 @@ const { JSON_HEADER } = API_HEADER;
 export const POST = async (request: Request) => {
   try {
     const { title } = await request.json();
-    console.log(title);
-    console.log(API_URL);
     if (!title) {
       return NextResponse.json({ error: "제목이 없습니다." }, { status: 400 });
     }
