@@ -1,3 +1,4 @@
+import "@/app/globals.css";
 import TanstackQueryProvider from "@/provider/tanstack-query-provider";
 import type { Metadata } from "next";
 
