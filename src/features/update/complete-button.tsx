@@ -15,7 +15,12 @@ const CompleteButton = ({ id, completed }: Props) => {
     }
   };
   return (
-    <button onClick={handleComplete}>{completed ? "미완료" : "완료"}</button>
+    <button
+      onClick={handleComplete}
+      className="w-14 flex-none bg-green-300 hover:bg-green-400 text-white px-3 py-1 rounded-md transition-colors duration-200 font-medium"
+    >
+      {completed ? "미완료" : "완료"}
+    </button>
   );
 };
 

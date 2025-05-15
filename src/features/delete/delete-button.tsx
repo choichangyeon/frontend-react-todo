@@ -17,7 +17,14 @@ const DeleteButton = ({ id }: Props) => {
     }
   };
 
-  return <button onClick={handleDelete}>삭제</button>;
+  return (
+    <button
+      onClick={handleDelete}
+      className="w-14 flex-none bg-red-400 hover:bg-red-500 text-white px-3 py-1 rounded-md transition-colors duration-200 font-medium"
+    >
+      삭제
+    </button>
+  );
 };
 
 export default DeleteButton;
