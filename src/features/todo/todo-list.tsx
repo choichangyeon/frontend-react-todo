@@ -15,6 +15,7 @@ const TodoList = () => {
   return (
     <section>
       <FilterSelectBox filter={filter} setFilter={setFilter} />
+      {todos.length === 0 && <span>Todo가 없습니다. 추가해주세요.</span>}
       <ul>
         {filter === "all"
           ? todos.map((todo) => <TodoComponent key={todo.id} {...todo} />)
